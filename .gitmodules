@@ -1,6 +1,0 @@
-[submodule "PDKs/open-pdks"]
-	path = PDKs/open-pdks
-	url = https://github.com/fossi-foundation/open-pdks.git
-[submodule "PDKs/skywater-pdk-libs-sky130_fd_sc_hd"]
-	path = PDKs/skywater-pdk-libs-sky130_fd_sc_hd
-	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git
