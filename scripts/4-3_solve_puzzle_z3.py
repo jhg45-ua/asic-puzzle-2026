@@ -79,7 +79,7 @@ def eval_sky130_cell(cell_type, in_signals):
 
 def solve_puzzle():
     print("="*65)
-    print("🚀 ASIC PUZZLE 2026: SOLUCIONADOR SMT / SAT CON Z3")
+    print("ASIC PUZZLE 2026: SOLUCIONADOR SMT / SAT CON Z3")
     print("="*65)
 
     with open("puzzle_extracted.v", "r") as f:
@@ -117,7 +117,7 @@ def solve_puzzle():
             current_state[q_net] = True if "dfstp" in g["type"] else False
 
     input_vars = []
-    max_cycles = 128
+    max_cycles = 150
 
     print(f"[*] Desenrollando simulación temporal simbólica (hasta {max_cycles} ciclos)...\n")
 
@@ -176,18 +176,18 @@ def solve_puzzle():
         
         if solver.check() == sat:
             print("="*65)
-            print(f"🎉 ¡SOLUCIÓN SATISFECHA EN EL CICLO T = {cycle}! 🎉")
+            print(f"¡SOLUCIÓN SATISFECHA EN EL CICLO T = {cycle}! 🎉")
             print("="*65)
             
             model = solver.model()
             bits = [1 if is_true(model.eval(v)) else 0 for v in input_vars]
             bitstring = "".join(map(str, bits))
             
-            print(f"\n🔑 SECUENCIA BINARIA ({len(bits)} bits):")
+            print(f"\nSECUENCIA BINARIA ({len(bits)} bits):")
             print(f"   {bitstring}\n")
             
             hex_val = hex(int(bitstring, 2))
-            print(f"🔑 VALOR HEXADECIMAL:")
+            print(f"VALOR HEXADECIMAL:")
             print(f"   {hex_val}\n")
             
             # Decodificar texto ASCII (MSB first / LSB first)
@@ -198,7 +198,7 @@ def solve_puzzle():
                     b_val = int("".join(map(str, byte_slice)), 2)
                     ascii_chars.append(chr(b_val) if 32 <= b_val <= 126 else f"\\x{b_val:02x}")
             
-            print(f"🔑 TEXTO / FLAG / CONTRASEÑA:")
+            print(f"TEXTO / FLAG / CONTRASEÑA:")
             print(f"   {''.join(ascii_chars)}\n")
             return bits
             

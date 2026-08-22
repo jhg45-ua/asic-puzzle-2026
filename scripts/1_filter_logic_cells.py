@@ -1,8 +1,9 @@
-import gdstk
+import gdstk # Este paquete permite leer y manipular archivos GDSII en Python
 from collections import Counter
 
-# 1. Cargar el archivo GDSII
+# Cargar el archivo GDSII
 library = gdstk.read_gds('../puzzle.gds')
+# Sacar la primera celda de nivel superior, que es la que contiene el diseño completo
 top_cell = library.top_level()[0]
 
 print(f"==================================================")

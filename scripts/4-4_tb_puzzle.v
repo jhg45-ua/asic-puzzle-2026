@@ -55,7 +55,7 @@ module tb_puzzle;
             @(posedge clk);
             #1;
             if (success == 1'b1) begin
-                $display("\n🎉 ¡SUCCESS = 1 DETECTADO EN EL CICLO %0d! 🎉", cycle_idx);
+                $display("\n¡SUCCESS = 1 DETECTADO EN EL CICLO %0d!", cycle_idx);
                 $write("%c", O);
             end
         end

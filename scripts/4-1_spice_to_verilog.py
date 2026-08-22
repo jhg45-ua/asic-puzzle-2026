@@ -124,4 +124,4 @@ def convert_spice_to_verilog(spice_filename, output_verilog, top_cell="puzzle"):
     print(f"[+] Archivo guardado en: {output_verilog}")
 
 if __name__ == "__main__":
-    convert_spice_to_verilog("puzzle.spice", "puzzle_extracted.v", top_cell="puzzle")
+    convert_spice_to_verilog("extracted/puzzle.spice", "puzzle_extracted.v", top_cell="puzzle")
